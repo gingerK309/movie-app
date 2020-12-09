@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+function Hello({name}) {
+  return (<h1>{name} world~!</h1>);
+}
+const greet = [
+  {
+  name: "Hello"
+  },
+  {
+    name: "안녕하세요"
+  },
+  {
+    name: "こんにちは"
+  },
+  {
+    name: "Bonjour"
+  }];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+   {greet.map(greeting =><Hello name={greeting.name} />)}  
     </div>
   );
 }

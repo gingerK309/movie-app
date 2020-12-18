@@ -1,28 +1,28 @@
 import React from 'react'
+//import propTypes from "prop-types"
 
-function Hello({name}) {
-  return (<h1>{name} world~!</h1>);
+class App extends React.Component{
+  state = {
+    count: 0
+  };
+  add = () => {
+    this.setState(current =>({ count: current.count +1 }));
+  };
+  sub = () => {
+    this.setState(current =>({ count: current.count -1 }));
+  };
+  render() {
+    
+    return <div>
+      <h1> The number is {this.state.count}</h1>
+      <button onClick={this.add}>ADD</button>
+     
+      <button onClick={this.sub}>SUB</button>
+    </div>;
+  }
 }
-const greet = [
-  {
-  name: "Hello"
-  },
-  {
-    name: "안녕하세요"
-  },
-  {
-    name: "こんにちは"
-  },
-  {
-    name: "Bonjour"
-  }];
+// add()는 즉시 호출, add는 클릭할때만 호출
 
-function App() {
-  return (
-    <div >
-   {greet.map(greeting =><Hello name={greeting.name} />)}  
-    </div>
-  );
-}
+
 
 export default App;

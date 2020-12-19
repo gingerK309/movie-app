@@ -1,27 +1,51 @@
-import React from 'react'
-//import propTypes from "prop-types"
+import React from 'react';
+import axios from "axios";
+import Movie from "./movies";
+import "./app.css";
 
 class App extends React.Component{
+  
   state = {
-    count: 0
+    isLoading: true,
+    movies:[]
   };
-  add = () => {
-    this.setState(current =>({ count: current.count +1 }));
-  };
-  sub = () => {
-    this.setState(current =>({ count: current.count -1 }));
-  };
+  getMovies= async () => {
+    const { data:
+      { data:
+        { movies }
+      }
+    } = await axios.get("https://yts.mx/api/v2/list_movies.json?sort_by=rating");
+    this.setState({ movies , isLoading: false});
+}
+   componentDidMount() {
+     this.getMovies();
+  }
   render() {
-    
-    return <div>
-      <h1> The number is {this.state.count}</h1>
-      <button onClick={this.add}>ADD</button>
-     
-      <button onClick={this.sub}>SUB</button>
-    </div>;
+    const { isLoading ,movies} = this.state;
+    return (<section className="container">
+      {isLoading ?
+        (<div className="loader">
+          <span className="loader__text">Loading...</span>
+        </div>)
+        : (
+          <div className="movies">
+            {movies.map(
+              movie => {
+            return <Movie key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              genres={movie.genres}
+              summary={movie.summary}
+              poster={movie.medium_cover_image}
+              year={movie.year} />
+          })}
+          </div>
+        )}
+    </section>
+    );
   }
 }
-// add()는 즉시 호출, add는 클릭할때만 호출
+
 
 
 

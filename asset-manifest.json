@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/gingerK309/movie-app/static/css/main.00cce31e.chunk.css",
+    "main.js": "/gingerK309/movie-app/static/js/main.3612248b.chunk.js",
+    "main.js.map": "/gingerK309/movie-app/static/js/main.3612248b.chunk.js.map",
+    "runtime-main.js": "/gingerK309/movie-app/static/js/runtime-main.ac724434.js",
+    "runtime-main.js.map": "/gingerK309/movie-app/static/js/runtime-main.ac724434.js.map",
+    "static/js/2.c5c5ecf9.chunk.js": "/gingerK309/movie-app/static/js/2.c5c5ecf9.chunk.js",
+    "static/js/2.c5c5ecf9.chunk.js.map": "/gingerK309/movie-app/static/js/2.c5c5ecf9.chunk.js.map",
+    "index.html": "/gingerK309/movie-app/index.html",
+    "static/css/main.00cce31e.chunk.css.map": "/gingerK309/movie-app/static/css/main.00cce31e.chunk.css.map",
+    "static/js/2.c5c5ecf9.chunk.js.LICENSE.txt": "/gingerK309/movie-app/static/js/2.c5c5ecf9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac724434.js",
+    "static/js/2.c5c5ecf9.chunk.js",
+    "static/css/main.00cce31e.chunk.css",
+    "static/js/main.3612248b.chunk.js"
+  ]
+}
